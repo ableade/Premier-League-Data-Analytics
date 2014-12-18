@@ -1,3 +1,6 @@
+/**
+ * GoalDifferential.java
+ */
 package footballcsv;
 
 import java.util.Date;
@@ -12,6 +15,13 @@ import java.util.Date;
  *
  */
 public class GoalDifferential {
+	/**
+	 * constructor 
+	 * @param date the date for goal differential
+	 * @param teamName the name of the team
+	 * @param goalsFor total goals scored by team to date
+	 * @param goalsAgainst total goals scored against a team to date
+	 */
 	public GoalDifferential(Date date, String teamName, int goalsFor,
 			int goalsAgainst) {
 		super();
@@ -26,10 +36,17 @@ public class GoalDifferential {
 	private int goalsFor;
 	private int goalsAgainst;
 	
+	/**
+	 * calculates and returns goal differential
+	 * @return goalsFor minus goalsAgainst
+	 */
 	public int getGoalDifferential() {
 		return goalsFor - goalsAgainst;		
 	}
 
+	/**
+	 * Overridden from java.lang.class
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,6 +59,9 @@ public class GoalDifferential {
 		return result;
 	}
 
+	/**
+	 * Overridden from Java.lang.class
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,34 +84,66 @@ public class GoalDifferential {
 		return true;
 	}
 
+	/**
+	 * returns date
+	 * @return date
+	 */
 	public Date getDate() {
 		return date;
 	}
 
+	/**
+	 * sets the date
+	 * @param date date
+	 */
 	public void setDate(Date date) {
 		this.date = date;
 	}
 
+	/**
+	 * returns the team name
+	 * @return teamName
+	 */
 	public String getTeamName() {
 		return teamName;
 	}
 
+	/**
+	 * sets a name for the team
+	 * @param teamName team name
+	 */
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
 	}
 
+	/**
+	 * returns goals scored for team to date
+	 * @return goals for the team
+	 */
 	public int getGoalsFor() {
 		return goalsFor;
 	}
 
+	/**
+	 * sets the goals for team
+	 * @param goalsFor goals for team to date
+	 */
 	public void setGoalsFor(int goalsFor) {
 		this.goalsFor = goalsFor;
 	}
 
+	/**
+	 * gets goals against team to date
+	 * @return goals against team
+	 */
 	public int getGoalsAgainst() {
 		return goalsAgainst;
 	}
 
+	/**
+	 * sets goals against team to date
+	 * @param goalsAgainst goals against team
+	 */
 	public void setGoalsAgainst(int goalsAgainst) {
 		this.goalsAgainst = goalsAgainst;
 	}

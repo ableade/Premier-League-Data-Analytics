@@ -1,3 +1,6 @@
+/**
+ * FootballCsvParser.java
+ */
 package footballcsv;
 
 import java.io.File;
@@ -21,28 +24,34 @@ import org.apache.commons.csv.CSVParser; //parser used for reading csv files
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
+/**
+ * Parser for football league csv files
+ * @version November 30, 2014
+ * @author Sola Adekunle
+ *
+ */
 public class FootballCsvParser {
 
-	Map<Integer, MatchRating> matchRatings; // maps match ratings to match
+	private Map<Integer, MatchRating> matchRatings; // maps match ratings to match
 											// rating objects
-	Map<String, ArrayList<GoalDifferential>> teamGoalDifferences; // maps teams
+	private Map<String, ArrayList<GoalDifferential>> teamGoalDifferences; // maps teams
 																	// to their
 																	// goals for
 	// against count for all dates found in the csv file
-	int matchratingLimit; // the number of games to use for the match rating  metric
+	private int matchratingLimit; // the number of games to use for the match rating  metric
 	private static final String [] FILE_HEADER_MAPPING = {"Date","Team 1","Team 2","FT","HT"};
 	private static final String NEW_LINE_SEPARATOR = "\n";
 	
 	private static final String [] OUTPUT_CSV_MAPPING ={"Match rating", "home wins", "draws",
 		"away wins", "total match pct", "home win pct", "draw pct", "away win pct"};
-	String dirPath; // path to directory containing files to parse
-	String outputCSV;
+	private String dirPath; // path to directory containing files to parse
+	private String outputCSV;
 	// format to use for csv files that will be read
-	CSVFormat format = CSVFormat.RFC4180.withHeader(FILE_HEADER_MAPPING).withDelimiter(',');
-	 CSVFormat csvFileFormat = CSVFormat.DEFAULT.withRecordSeparator(NEW_LINE_SEPARATOR);
-	CSVParser parser;
-	CSVPrinter csvFilePrinter ;
-	public ArrayList<Match> matches; // set of all matches from csv files parsed
+	private CSVFormat format = CSVFormat.RFC4180.withHeader(FILE_HEADER_MAPPING).withDelimiter(',');
+	 private CSVFormat csvFileFormat = CSVFormat.DEFAULT.withRecordSeparator(NEW_LINE_SEPARATOR);
+	private CSVParser parser;
+	private CSVPrinter csvFilePrinter ;
+	private ArrayList<Match> matches; // set of all matches from csv files parsed
 
 	/**
 	 * initializes class members for the FootballCsvParser
@@ -107,21 +116,9 @@ public class FootballCsvParser {
 	}
 
 	/**
-	 * adds goal differential to date for two teams. Computes and calculates the
-	 * match rating for that particular game
-	 * 
-	 * @return
-	 */
-	public int getMatchRating(Match aMatch) {
-		return Integer.MAX_VALUE;
-
-	}
-
-	/**
 	 * Calculates goal superiority for a team within the time frame limit set
 	 * 
-	 * @param team
-	 *            name of the team
+	 * @param team the name of the team
 	 * @return goal superiority of the team
 	 */
 	private int getGoalSuperiority(String team) {
@@ -163,7 +160,6 @@ public class FootballCsvParser {
 	 * differentials each team has
 	 * 
 	 * @param aMatch The match
-	 * 
 	 * @ return true if there was a successful addition
 	 */
 	public boolean addGoalDifferentials(Match aMatch) {
@@ -190,8 +186,8 @@ public class FootballCsvParser {
 	/**
 	 * add goal differential to array lists for the team
 	 * 
-	 * @param gd
-	 * @return
+	 * @param gd a goal differential to be added
+	 * @return true if the goal differential is added
 	 */
 	private boolean addGoalDifferential(GoalDifferential gd) {
 		// check to see if we already have the team
@@ -207,9 +203,7 @@ public class FootballCsvParser {
 
 	/**
 	 * updates goal differential to date for a particular team
-	 * 
-	 * @param gd
-	 *            goal differential to be updated
+	 * @param gd goal differential to be updated
 	 */
 	private void updateGoalDifferential(GoalDifferential gd) {
 		if (this.teamGoalDifferences.containsKey(gd.getTeamName())) {
@@ -228,6 +222,8 @@ public class FootballCsvParser {
 	/*
 	 * calculates and sets match rating for a given match and adds the match
 	 * rating to the set of match ratings we have found so far
+	 * @param aMatch the match whose match rating will be added
+	 * @return true if a match rating is added
 	 */
 	public boolean addMatchRating(Match aMatch) {
 		int homeGoalSuperiority = this.getGoalSuperiority(aMatch.getHomeTeam());
@@ -265,6 +261,14 @@ public class FootballCsvParser {
 		return false;
 	}
 
+	/**
+	 * reads and parses a csv file, calculates match ratings
+	 * and goal differentials for each match in csv file
+	 * @param fileName the name of the csv file
+	 * @throws FileNotFoundException if a file is not found
+	 * @throws IOException if there is an error in file input
+	 * @throws ParseException if there is an error parsing the file
+	 */
 	public void readCSVFile(File fileName) throws FileNotFoundException,
 			IOException, ParseException {
 
@@ -309,6 +313,11 @@ public class FootballCsvParser {
 			}
 			}
 	}
+	/**
+	 * prints a visual represenation of the contents of 
+	 * a java map variable
+	 * @param mp the map to be printed
+	 */
 	public static void printMap(Map mp) {
 	    Iterator it = mp.entrySet().iterator();
 	    while (it.hasNext()) {
@@ -319,7 +328,7 @@ public class FootballCsvParser {
 	}
 	
 	/**
-	 * 
+	 * generates an output csv after all CSV files have been parsed
 	 * @throws IOException if there is an error reading the file
 	 */
 	public void generateFinalCSV() throws IOException {
