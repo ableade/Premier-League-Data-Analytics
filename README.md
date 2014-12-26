@@ -15,3 +15,9 @@ Our linear regression model is done in r using csv files generated from raw data
 under the fb modelling java project. Data used for this experiment was obtained from the following repo by geraldb. This repo has the nice 
 property of having all the matches already sorted by the date. The format of the csv files within this repo https://github.com/footballcsv is the same convention
 our jarver parser expects to create the final csv for our R script.
+
+Below is an image generated in R of all the match ratings obtained from the match ratings we genrated.
+You can recognize the shape of the normal distribution.
+
+
+![alt tag](https://raw.github.com/lesfleurs/fbmodelling/master/img/match distribiton.png)
