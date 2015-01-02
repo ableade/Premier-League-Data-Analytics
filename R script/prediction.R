@@ -11,5 +11,6 @@ summary(home_fit)
 summary(away_fit)
 summary(draw_fit)
 
-newdata = data.frame(Match.rating=6)
+newdata = data.frame(Match.rating=0)
 predict(home_fit, newdata); predict(away_fit, newdata); predict(draw_fit, newdata)
+

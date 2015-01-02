@@ -5,9 +5,9 @@ a predictive model for premier league soccer games
 
 This is a predictive model for games played in any major soccer league
 using a variation of a popular soccer betting strategy.
-The main score metric used here is a match rating which is a measure of the goal superioriry of two teams.
+The main score metric used here is a match rating which is a measure of the goal superiority of two teams.
 To calculate the match rating we take the difference of the goal difference of the home side and the away side for the 
-last six games they have played in that particular seasons.
+last k games they have played in that particular season. The value chosen for k in this model is 6. 
 
 We gather all outcomes for all match ratings we encounter and we use this to form a linear regression model. 
 
