@@ -14,7 +14,7 @@ Our linear regression model is done in r using csv files generated from the raw 
 property of having all the matches already sorted by the date. The format of the csv files within this repo https://github.com/footballcsv is the same convention
 our jarver parser expects to create the final csv for our R script.
 
-Below is an image generated in R of all the match ratings obtained from the match ratings we genrated.
+Below is an image generated in R of all the match ratings obtained from the match ratings we generated.
 You can recognize the shape of the normal distribution.
 
 
