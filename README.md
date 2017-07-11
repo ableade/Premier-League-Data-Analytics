@@ -15,4 +15,4 @@ Below is an image generated in R of all the match ratings obtained from the matc
 You can recognize the shape of the normal distribution.
 
 
-![alt tag](https://raw.github.com/lesfleurs/fbmodelling/master/img/matchdistribiton.png)
+![alt tag](https://raw.github.com/lesfleurs/fbmodelling/master/img/match distribiton.png)
