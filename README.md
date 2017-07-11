@@ -1,10 +1,7 @@
 fbmodelling
 ===========
-
-a predictive model for premier league soccer games
-
-This is a predictive model for games played in any major soccer league for which the primary input parameters are goal superiority.
-The main score metric used here is a match rating which is a measure of the goal superiority of two teams.
+This is a prediction model for games played in an association football league for which the primary input parameter is the match rating. 
+The match rating is a measure of the goal superiority of two teams.
 To calculate the match rating we take the difference of the goal difference of the home side and the away side for the 
 last k games they have played in that particular season. The value chosen for k in this model is 6. 
 
@@ -18,4 +15,4 @@ Below is an image generated in R of all the match ratings obtained from the matc
 You can recognize the shape of the normal distribution.
 
 
-![alt tag](https://raw.github.com/lesfleurs/fbmodelling/master/img/match distribiton.png)
+![alt tag](https://raw.github.com/lesfleurs/fbmodelling/master/img/matchdistribiton.png)
