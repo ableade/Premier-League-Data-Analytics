@@ -32,12 +32,19 @@ import org.apache.commons.csv.CSVRecord;
  */
 public class FootballCsvParser {
 
+<<<<<<< HEAD
 	private Map<Integer, MatchRating> matchRatings; // maps match ratings to match
 											// rating objects
 	private Map<String, ArrayList<GoalDifferential>> teamGoalDifferences; // maps teams
 																	// to their
 																	// goals for
 	// against count for all dates found in the csv file
+=======
+	 // maps match ratings to match rating objects
+	private Map<Integer, MatchRating> matchRatings;
+	 // maps teams to their goals for against count for all dates found in the csv file
+	private Map<String, ArrayList<GoalDifferential>> teamGoalDifferences;
+>>>>>>> 34911bd... inital
 	private int matchratingLimit; // the number of games to use for the match rating  metric
 	private static final String [] FILE_HEADER_MAPPING = {"Date","Team 1","Team 2","FT","HT"};
 	private static final String NEW_LINE_SEPARATOR = "\n";
@@ -237,6 +244,7 @@ public class FootballCsvParser {
 			MatchRating rating = new MatchRating(matchRating);
 			// check to see if we have encountered this match rating
 			if (this.matchRatings.containsKey(matchRating)) {
+<<<<<<< HEAD
 
 				rating = this.matchRatings.get(matchRating);
 				// update this match rating with new information
@@ -249,12 +257,27 @@ public class FootballCsvParser {
 																		// away
 																		// side
 																		// win
+=======
+				//Update this match rating with the new information
+				rating = this.matchRatings.get(matchRating);
+			}
+			//Did the home team win?
+			if (aMatch.getHomeScore() > aMatch.getAwayScore()) {
+				rating.setHomeWins(rating.getHomeWins() + 1);
+
+				//Did the away team win?
+			} else if (aMatch.getAwayScore() > aMatch.getHomeScore()) {
+>>>>>>> 34911bd... inital
 				rating.setAwayWins(rating.getAwayWins() + 1);
 			} else { // the match ended as a draw
 				rating.setDraws(rating.getDraws() + 1);
 			}
+<<<<<<< HEAD
 			// add the match rating with updated statistics to our map of match
 			// ratings
+=======
+			//Add updated match rating to the map
+>>>>>>> 34911bd... inital
 			this.matchRatings.put(matchRating, rating);
 			return true;
 		}

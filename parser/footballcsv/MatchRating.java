@@ -34,6 +34,7 @@ public class MatchRating {
 		this.awayWins =0;
 		this.draws =0;
 	}
+
 	/**
 	 * returns the match rating
 	 * @return the match rating
@@ -41,6 +42,7 @@ public class MatchRating {
 	public int getMatchRating() {
 		return matchRating;
 	}
+
 	/**
 	 * sets the match rating
 	 * @param matchRating the match rating
@@ -48,6 +50,7 @@ public class MatchRating {
 	public void setMatchRating(int matchRating) {
 		this.matchRating = matchRating;
 	}
+
 	/**
 	 * returns the number of home wins for the match rating
 	 * @return number of home wins
@@ -79,6 +82,7 @@ public class MatchRating {
 	public void setAwayWins(int awayWins) {
 		this.awayWins = awayWins;
 	}
+
 	/**
 	 * returns the number of draws for the match rating
 	 * @return number of draws
@@ -86,6 +90,7 @@ public class MatchRating {
 	public int getDraws() {
 		return draws;
 	}
+
 	/**
 	 * sets the number of draws for the match rating
 	 * @param draws number of draws
@@ -103,6 +108,7 @@ public class MatchRating {
 				+ homeWins + ", awayWins=" + awayWins + ", draws=" + draws
 				+ "]";
 	}
+
 	/**
 	 * gets total home wins, draws and away wins and returns a total
 	 * @return total of home wins, draws and away wins
@@ -110,6 +116,7 @@ public class MatchRating {
 	public int getTotalGames () {
 		return this.awayWins+ this.homeWins +this.draws;
 	}
+
 	/**
 	 * returns home wins as a percentage of total games for the match rating
 	 * @return home win pecentage
@@ -122,6 +129,7 @@ public class MatchRating {
 		
 		return percentage;
 	}
+
 	/**
 	 * returns draws as a percentage of total games for the match rating
 	 * @return draw percentage

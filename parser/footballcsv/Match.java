@@ -56,6 +56,7 @@ public class Match {
 	public void setHomeTeam(String homeTeam) {
 		this.homeTeam = homeTeam;
 	}
+
 	/**
 	 * returns name of the away team
 	 * @return the away team
@@ -63,6 +64,7 @@ public class Match {
 	public String getAwayTeam() {
 		return awayTeam;
 	}
+
 	/**
 	 * sets the name of the away team
 	 * @param awayTeam the away team
@@ -70,6 +72,7 @@ public class Match {
 	public void setAwayTeam(String awayTeam) {
 		this.awayTeam = awayTeam;
 	}
+
 	/**
 	 * returns the date of the match
 	 * @return match date
@@ -77,6 +80,8 @@ public class Match {
 	public Date getDate() {
 		return date;
 	}
+
+
 	/**
 	 * sets the date of the match
 	 * @param date match date
@@ -92,6 +97,7 @@ public class Match {
 	public int getMatchRating() {
 		return MatchRating;
 	}
+
 	/**
 	 * sets the match rating for the match
 	 * @param matchRating sets the match rating
@@ -99,6 +105,7 @@ public class Match {
 	public void setMatchRating(int matchRating) {
 		MatchRating = matchRating;
 	}
+
 	/**
 	 * returns number of goals scored for the home team
 	 * @return number of goals scored for the away team
@@ -122,6 +129,7 @@ public class Match {
 	public int getAwayScore() {
 		return awayGoals;
 	}
+
 	/**
 	 * sets the number of goals for the away team
 	 * @param awayScore number of goals for away team
